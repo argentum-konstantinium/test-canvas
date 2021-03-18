@@ -32,8 +32,7 @@ const PLANE = new THREE.Mesh(GEOMETRY, MATERIAL);
 PLANE.scale.x = 3;
 PLANE.scale.y = 3;
 
-PLANE.rotation.x = -1.2;
-PLANE.rotation.z = 1.55;
+PLANE.rotation.x = -1;
 
 SCENE.add(PLANE);
 let positionAttribute = GEOMETRY.attributes.position;
