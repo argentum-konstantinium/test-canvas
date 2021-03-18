@@ -4,13 +4,13 @@ const RENDERER = new THREE.WebGLRenderer({
     antialias: true
 });
 const loader = new THREE.TextureLoader();
-var light = new THREE.HemisphereLight( 0xffffbb, 0x887979, 2.6);
+var light = new THREE.HemisphereLight( 0xffffbb, 0x887979, 1.7);
 SCENE.add( light );
 texture = loader.load('./bg.png');
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set( 30, 30 );
-texture.anisotropy = 2;
+texture.anisotropy = 32;
  
 rendererResizer();
 window.addEventListener('resize', rendererResizer);
@@ -41,7 +41,7 @@ SCENE.add(PLANE);
 let positionAttribute = GEOMETRY.attributes.position;
 
 CAMERA.position.z = 10;
- a = 0.01;
+ a = 0.005;
 
 function updateVerticles() {
     offset = Date.now() * 0.0007;
