@@ -39,17 +39,23 @@ SCENE.add(PLANE);
 let positionAttribute = GEOMETRY.attributes.position;
 
 CAMERA.position.z = 10;
-t = 0;
+
 
 function updateVerticles() {
+    offset = Date.now() * 0.001;
+ 
     for (let i = 0; i < positionAttribute.count; i++) {
         let x = positionAttribute.getX(i);
         let y = positionAttribute.getY(i);
         z = positionAttribute.getZ(i);
-        t += 0.0000006;
-        z = noise.simplex3(x / 5, y / 5, t) * 1.2;
+      
+        z = noise.simplex2(x / 5, y / 5 + offset) * 1.2;
         positionAttribute.setXYZ(i, x, y, z);
-
+       
+         
+        
+        GEOMETRY.attributes.position.needsUpdate = true;
+       
     };
 };
 function animate() {
