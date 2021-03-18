@@ -1,7 +1,7 @@
 const SCENE = new THREE.Scene();
 const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const RENDERER = new THREE.WebGLRenderer({
-    antialias: true
+    antialias: true,
 });
 const loader = new THREE.TextureLoader();
 var light = new THREE.HemisphereLight( 0xffffbb, 0x887979, 1.7);
